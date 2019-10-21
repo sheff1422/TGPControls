@@ -424,9 +424,9 @@ public class TGPDiscreteSlider:TGPSlider_INTERFACE_BUILDER {
             if let image = trackImage,
                 let cgImage = image.cgImage,
                 let ctx = UIGraphicsGetCurrentContext() {
-                let centered = CGRect(x: (frame.width/2) - (image.size.width/2),
+                let centered = CGRect(x: (frame.width/2) - (frame.size.width/2),
                                       y: (frame.height/2) - (image.size.height/2),
-                                      width: image.size.width,
+                                      width: frame.size.width,
                                       height: image.size.height)
                 ctx.draw(cgImage, in: centered)
             }
@@ -558,11 +558,11 @@ public class TGPDiscreteSlider:TGPSlider_INTERFACE_BUILDER {
         let trackHeight = (.iOS == trackComponentStyle) ? 2 : trackThickness
         var trackSize = CGSize(width: frame.width - thumbWidth,
                                height: trackHeight)
-        if(.image == trackComponentStyle) {
-            if let image = trackImage {
-                trackSize.width = image.size.width - thumbWidth
-            }
-        }
+//        if(.image == trackComponentStyle) {
+//            if let image = trackImage {
+//                trackSize.width = image.size.width - thumbWidth
+//            }
+//        }
 
         trackRectangle = CGRect(x: (frame.width - trackSize.width)/2,
                                 y: (frame.height - trackSize.height)/2,
