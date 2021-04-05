@@ -10,15 +10,15 @@ public enum ComponentStyle:Int {
 
 //  Interface builder hides the IBInspectable for UIControl
 #if TARGET_INTERFACE_BUILDER
-public class TGPSlider_INTERFACE_BUILDER:UIView {
+open class TGPSlider_INTERFACE_BUILDER:UIView {
 }
 #else // !TARGET_INTERFACE_BUILDER
-public class TGPSlider_INTERFACE_BUILDER:UIControl {
+open class TGPSlider_INTERFACE_BUILDER:UIControl {
 }
 #endif // TARGET_INTERFACE_BUILDER
 
 @IBDesignable
-public class TGPDiscreteSlider:TGPSlider_INTERFACE_BUILDER {
+open class TGPDiscreteSlider:TGPSlider_INTERFACE_BUILDER {
 
     @IBInspectable public var tickStyle:Int = ComponentStyle.rectangular.rawValue {
         didSet {
